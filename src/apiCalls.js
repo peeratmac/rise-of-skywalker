@@ -1,3 +1,5 @@
+// MOVIES/FILMS DATA
+
 export const getAllMoviesData = () => {
   return fetch('https://swapi.co/api/films')
     .then(response => {
@@ -77,4 +79,23 @@ export const getIndividualFilms = characters => {
     });
   });
   return Promise.all(allFilms);
+};
+
+// CHARACTERS DATA
+
+export const setupCharactersData = episodeID => {
+  const URL = `https://swapi.co/api/films/${episodeID}/`;
+  return fetch(URL)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(
+          `Error: ${response.status}, please check and try again.`
+        );
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data.characters);
+      return data.characters;
+    });
 };
