@@ -9,6 +9,12 @@ class LoginForm extends Component {
       rank: 'Youngling'
     };
   }
+
+  handleChange = e => {
+    e.preventDefault();
+    console.log(e.target)
+  }
+
   render() {
     return (
       <div>
@@ -19,14 +25,16 @@ class LoginForm extends Component {
               name='name'
               value={this.state.name}
               placeholder='Enter Your Name, example: John Boyega'
+              onChange={e => this.handleChange(e)}
             />
             <input
               type='text'
               name='quote'
               value={this.state.quote}
               placeholder='Enter Your Favorite Quote, example: Finn is the best, hello, I am the Force.'
+              onChange={e => this.handleChange(e)}
             />
-            <select name='rank' value={this.state.rank}>
+            <select name='rank' defaultValue={this.state.rank}>
               <option value='Youngling'>Youngling</option>
               <option value='Padawan'>Padawan</option>
               <option value='Jedi Knight'>Jedi Knight</option>
