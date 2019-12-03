@@ -97,7 +97,11 @@ export const setupCharactersData = episodeID => {
     .then(data => {
       console.log('/people URLs:', data.characters);
       return data.characters;
-    });
+    })
+    .then(URLs => cleanUpForSetUp(URLs))
+    .then(characters => getIndividualHomeworld(characters))
+    .then(characters => getIndividualSpecies(characters))
+    .then(characters => getIndividualFilms(characters));
 };
 
 export const cleanUpForSetUp = URLs => {
