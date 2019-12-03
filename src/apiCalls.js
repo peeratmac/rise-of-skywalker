@@ -95,7 +95,30 @@ export const setupCharactersData = episodeID => {
       return response.json();
     })
     .then(data => {
-      console.log(data.characters);
+      console.log('/people URLs:', data.characters);
       return data.characters;
     });
+};
+
+export const cleanUpForSetUp = URLs => {
+  const charactersData = URLs.map(URL => {
+    return fetch(URL)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(
+            `Error: ${response.status}, please check and try again.`
+          );
+        }
+        return response.json();
+      })
+      .then(data => {
+        return {
+          homeworld: data.homeworld,
+          species: data.species,
+          films: data.films,
+          name: data.name
+        };
+      });
+  });
+  return Promise.all(charactersData);
 };
