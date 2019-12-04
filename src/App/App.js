@@ -10,14 +10,20 @@ class App extends Component {
     super();
     this.state = {
       allMoviesData: [],
-      selectedMovie: ''
+      selectedMovie: '',
+      selectedCharacters: []
     };
   }
 
   componentDidMount() {
     getAllMoviesData().then(data => this.setState({ allMoviesData: data }));
-    setupCharactersData(7);
   }
+
+  setupCharacters = episodeID => {
+    setupCharactersData(episodeID).then(data =>
+      this.setState({ selectedCharacters: data })
+    );
+  };
 
   render = () => {
     return (
@@ -28,7 +34,11 @@ class App extends Component {
           exact
           path='/movies'
           render={props => (
-            <MovieContainer {...props} movies={this.state.allMoviesData} />
+            <MovieContainer
+              {...props}
+              movies={this.state.allMoviesData}
+              setupCharacters={this.setupCharacters}
+            />
           )}
         />
       </div>
