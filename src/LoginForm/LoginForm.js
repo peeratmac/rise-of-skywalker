@@ -11,9 +11,18 @@ class LoginForm extends Component {
     };
   }
 
+  resetInputFields = e => {
+    console.log(this.state)
+    this.setState({
+      name: '',
+      quote: '',
+      rank: 'Youngling'})
+      console.log(this.state)
+  }
+
   handleChange = e => {
     e.preventDefault();
-    this.setState({[e.target.name]: e.target.value, [e.target.quote]: e.target.value})
+    this.setState({[e.target.name]: e.target.value})
   }
 
   render() {
@@ -35,13 +44,13 @@ class LoginForm extends Component {
             placeholder='Enter Your Favorite Quote. Ex: Finn is the best'
             onChange={e => this.handleChange(e)}
           />
-          <select name='rank' defaultValue={this.state.rank}>
+          <select name='rank' value={this.state.rank} onChange={e => this.handleChange(e)}>
             <option value='Youngling'>Youngling</option>
             <option value='Padawan'>Padawan</option>
             <option value='Jedi Knight'>Jedi Knight</option>
             <option value='Jedi Master'>Jedi Master</option>
           </select>
-          <button type='button' className='login-btn'>Submit to Proceed</button>
+          <button type='button' className='login-btn' onClick={this.resetInputFields}>Submit to Proceed</button>
         </form>
       </div>
     );
