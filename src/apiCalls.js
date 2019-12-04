@@ -84,7 +84,7 @@ export const getIndividualFilms = characters => {
 // CHARACTERS DATA
 
 export const setupCharactersData = episodeID => {
-  const URL = `https://swapi.co/api/films/${episodeID}/`;
+  const URL = `https://swapi.co/api/films/${episodeID}`;
   return fetch(URL)
     .then(response => {
       if (!response.ok) {
@@ -99,6 +99,7 @@ export const setupCharactersData = episodeID => {
       return data.characters;
     })
     .then(URLs => cleanUpForSetUp(URLs))
+    .then(data => data.splice(0, 10))
     .then(characters => getIndividualHomeworld(characters))
     .then(characters => getIndividualSpecies(characters))
     .then(characters => getIndividualFilms(characters));

@@ -3,3 +3,16 @@
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
 }
+
+.button {
+  display: inline-block;
+  background: lightblue;
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}
