@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.login-page {
+  background-attachment: fixed;
+  background-image: url('../images/login-duel.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 120vh;
+}
+
+h1 {
+  color: #FFF;
+  text-align: center;
+  text-shadow: -1px 0 black, 0 2px black, 0px 0 black, 0 -1px black;
+  font-size: 50px;
+  padding: 35px;
+}
+
+@font-face {
+  font-family: "Star-Jedi";
+  src: url('../fonts/starjedi-webfont.woff') format('woff')
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-self: center;
+  margin: 3% 0 0 30%;
+  justify-content: space-between;
+  height: 200px;
+}
+
+input {
+  height: 40px;
+  font-size: 20px; 
+  border: 2px solid #000; 
+  padding: 10px;
+  border-radius: 4px;
+}
+
+::placeholder {
+  color: #141D4F;
+};
+
+.login-btn,
+select {
+  border: 2px solid #000;
+  height: 40px;
+  font-size: 20px;
+  color: #141D4F;
+  border-radius: 4px;
+}
