@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getAllMoviesData } from '../apiCalls';
+import { getAllMoviesData, setupCharactersData } from '../apiCalls';
 import LoginForm from '../LoginForm/LoginForm';
 import './App.css';
 
@@ -7,12 +7,14 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      allMoviesData: []
+      allMoviesData: [],
+      selectedMovie: ''
     };
   }
 
   componentDidMount() {
     getAllMoviesData().then(data => this.setState({ allMoviesData: data }));
+    setupCharactersData(7);
   }
 
   render() {
