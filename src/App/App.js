@@ -56,10 +56,8 @@ class App extends Component {
               {...props}
               characters={this.state.selectedCharacters}
               crawl={
-                this.state.allMoviesData[this.state.selectedMovieIndex]
-                  .opening_crawl
+                this.state.allMoviesData[this.state.crawlingIndex].opening_crawl
               }
-              updateCrawling={this.updateCrawling}
             />
           )}
         />

@@ -3,7 +3,7 @@ import MovieCard from '../MovieCard/MovieCard';
 import PropTypes from 'prop-types';
 import './MovieContainer.css';
 
-const MovieContainer = ({ movies, setupCharacters }) => {
+const MovieContainer = ({ movies, setupCharacters, updateCrawling }) => {
   const releasedOrder = [4, 5, 6, 1, 2, 3, 7];
   const allMovies = movies.map((movie, i) => {
     return (
@@ -12,6 +12,7 @@ const MovieContainer = ({ movies, setupCharacters }) => {
         episode_id={movie.episode_id}
         release_date={movie.release_date}
         setupCharacters={setupCharacters}
+        updateCrawling={updateCrawling}
         movieIndex={i}
         id={releasedOrder[i]}
         key={i}
