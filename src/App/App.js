@@ -41,6 +41,8 @@ class App extends Component {
             />
           )}
         />
+
+        <Route exact path='/movies/:id' />
       </div>
     );
   };

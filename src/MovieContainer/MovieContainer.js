@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import './MovieContainer.css';
 
 const MovieContainer = ({ movies, setupCharacters }) => {
+  const releasedOrder = [4, 5, 6, 1, 2, 3, 7];
   const allMovies = movies.map((movie, i) => {
     return (
       <MovieCard
@@ -12,6 +13,7 @@ const MovieContainer = ({ movies, setupCharacters }) => {
         release_date={movie.release_date}
         setupCharacters={setupCharacters}
         movieIndex={i}
+        id={releasedOrder[i]}
         key={i}
       />
     );
