@@ -19,8 +19,8 @@ class App extends Component {
     getAllMoviesData().then(data => this.setState({ allMoviesData: data }));
   }
 
-  setupCharacters = episodeID => {
-    setupCharactersData(episodeID).then(data =>
+  setupCharacters = movieIndex => {
+    setupCharactersData(movieIndex).then(data =>
       this.setState({ selectedCharacters: data })
     );
   };

@@ -2,7 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './MovieCard.css';
 
-const MovieCard = ({ title, episode_id, release_date, setupCharacters }) => {
+const MovieCard = ({
+  title,
+  episode_id,
+  release_date,
+  setupCharacters,
+  movieIndex
+}) => {
   return (
     <div className='card'>
       <h2>{title}</h2>
@@ -14,7 +20,8 @@ const MovieCard = ({ title, episode_id, release_date, setupCharacters }) => {
         type='button'
         onClick={event => {
           console.log(event.target.id);
-          setupCharacters(event.target.id);
+          console.log(movieIndex);
+          setupCharacters(movieIndex + 1);
         }}>
         View Characters
       </button>

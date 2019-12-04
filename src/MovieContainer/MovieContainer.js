@@ -11,6 +11,7 @@ const MovieContainer = ({ movies, setupCharacters }) => {
         episode_id={movie.episode_id}
         release_date={movie.release_date}
         setupCharacters={setupCharacters}
+        movieIndex={i}
         key={i}
       />
     );
