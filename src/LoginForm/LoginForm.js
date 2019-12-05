@@ -63,7 +63,7 @@ class LoginForm extends Component {
             <button
               type='button'
               className='login-btn'
-              onClick={this.resetInputFields}>
+              onClick={() => this.handleSubmit()}>
               Submit to Proceed
             </button>
           </Link>
