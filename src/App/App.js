@@ -10,6 +10,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      userName: '',
+      userQuote: '',
+      userRank: '',
       allMoviesData: [],
       crawlingIndex: null,
       selectedCharacters: []
@@ -30,10 +33,25 @@ class App extends Component {
     this.setState({ crawlingIndex: episodeID - 1 });
   };
 
+  setupUserProfile = (userName, userQuote, userRank) => {
+    this.setState({
+      userName: userName,
+      userQuote: userQuote,
+      userRank: userRank
+    });
+  };
+
   render = () => {
     return (
       <div>
-        <LoginForm />
+        <Route
+          exact
+          path='/'
+          render={props => (
+            <LoginForm {...props} setupUserProfile={this.setupUserProfile} />
+          )}
+        />
+
         <Route
           exact
           path='/movies'

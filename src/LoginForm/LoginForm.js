@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './LoginForm.scss'
+import './LoginForm.scss';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends Component {
   constructor() {
@@ -11,19 +12,20 @@ class LoginForm extends Component {
     };
   }
 
-  resetInputFields = e => {
-    console.log(this.state)
+  resetInputFields = event => {
     this.setState({
       name: '',
       quote: '',
-      rank: 'Youngling'})
-      console.log(this.state)
-  }
+      rank: 'Youngling'
+    });
+  };
 
-  handleChange = e => {
-    e.preventDefault();
-    this.setState({[e.target.name]: e.target.value})
-  }
+  handleChange = event => {
+    event.preventDefault();
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  handleSubmit = () => {};
 
   render() {
     return (
@@ -34,23 +36,33 @@ class LoginForm extends Component {
             type='text'
             name='name'
             value={this.state.name}
-            placeholder='Enter Your Name'
-            onChange={e => this.handleChange(e)}
+            placeholder='Enter Your Name. Ex: Finn'
+            onChange={event => this.handleChange(event)}
           />
           <input
             type='text'
             name='quote'
             value={this.state.quote}
             placeholder='Enter Your Favorite Quote. Ex: Finn is the best'
-            onChange={e => this.handleChange(e)}
+            onChange={event => this.handleChange(event)}
           />
-          <select name='rank' value={this.state.rank} onChange={e => this.handleChange(e)}>
+          <select
+            name='rank'
+            value={this.state.rank}
+            onChange={e => this.handleChange(e)}>
             <option value='Youngling'>Youngling</option>
             <option value='Padawan'>Padawan</option>
             <option value='Jedi Knight'>Jedi Knight</option>
             <option value='Jedi Master'>Jedi Master</option>
           </select>
-          <button type='button' className='login-btn' onClick={this.resetInputFields}>Submit to Proceed</button>
+          <Link className='link' to={`/movies`}>
+            <button
+              type='button'
+              className='login-btn'
+              onClick={this.resetInputFields}>
+              Submit to Proceed
+            </button>
+          </Link>
         </form>
       </div>
     );
