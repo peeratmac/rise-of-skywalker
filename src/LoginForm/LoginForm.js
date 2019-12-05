@@ -30,10 +30,10 @@ class LoginForm extends Component {
     const { name, quote, rank } = this.state;
     if (name && quote) {
       this.props.setupUserProfile(name, quote, rank);
-      this.setState({ isReadyToLogin: true, isIncomplete: false });
+      this.setState({ isReadyToLogin: true, isComplete: true });
       this.resetInputFields();
     } else {
-      this.setState({ isReadyToLogin: false, isIncomplete: true });
+      this.setState({ isReadyToLogin: false, isComplete: false });
     }
   };
 
@@ -53,7 +53,6 @@ class LoginForm extends Component {
           <h2 className={isFormComplete}>
             Please make sure to have all the information to get started!
           </h2>
-
           <input
             type='text'
             name='name'
@@ -61,7 +60,6 @@ class LoginForm extends Component {
             placeholder='Enter Your Name. Ex: Finn'
             onChange={this.handleChange}
           />
-
           <input
             type='text'
             name='quote'
@@ -69,7 +67,6 @@ class LoginForm extends Component {
             placeholder='Enter Your Favorite Quote. Ex: Finn is the best'
             onChange={this.handleChange}
           />
-
           <select
             name='rank'
             value={this.state.rank}
@@ -79,7 +76,6 @@ class LoginForm extends Component {
             <option value='Jedi Knight'>Jedi Knight</option>
             <option value='Jedi Master'>Jedi Master</option>
           </select>
-
           <button
             type='button'
             className='login-btn'
