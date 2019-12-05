@@ -8,6 +8,7 @@ const MovieCard = ({
   episode_id,
   release_date,
   setupCharacters,
+  updateCrawling,
   movieIndex,
   id
 }) => {
@@ -21,9 +22,8 @@ const MovieCard = ({
           id={episode_id}
           className='button'
           type='button'
-          onClick={event => {
-            console.log(event.target.id);
-            console.log(movieIndex);
+          onClick={() => {
+            updateCrawling(movieIndex + 1);
             setupCharacters(movieIndex + 1);
           }}>
           View Characters
