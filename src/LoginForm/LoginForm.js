@@ -25,7 +25,11 @@ class LoginForm extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleSubmit = () => {};
+  handleSubmit = () => {
+    const { name, quote, rank } = this.state;
+    this.props.setupUserProfile(name, quote, rank);
+    this.resetInputFields();
+  };
 
   render() {
     return (
