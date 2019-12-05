@@ -16,3 +16,13 @@
   transition: opacity 0.2s ease-in;
   outline: none;
 }
+
+.favorite-image {
+  cursor: pointer;
+  transition: opacity 0.2s ease-in;
+  width: 50px;
+}
+
+.episode-list {
+  height: 200px;
+}
