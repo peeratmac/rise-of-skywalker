@@ -1,5 +1,6 @@
 import React from 'react';
 import CharacterCard from '../CharacterCard/CharacterCard';
+import './CharacterContainer.css';
 
 const CharacterContainer = ({ characters, crawl }) => {
   const allCharacters = characters.map((character, i) => {
@@ -9,7 +10,7 @@ const CharacterContainer = ({ characters, crawl }) => {
   return (
     <div>
       <p>{crawl}</p>
-      <h1>{allCharacters}</h1>
+      <div className='grid-3'>{allCharacters}</div>
     </div>
   );
 };
