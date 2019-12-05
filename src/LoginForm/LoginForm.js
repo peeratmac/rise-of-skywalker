@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './LoginForm.scss';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class LoginForm extends Component {
   constructor() {
@@ -8,7 +8,9 @@ class LoginForm extends Component {
     this.state = {
       name: '',
       quote: '',
-      rank: 'Youngling'
+      rank: 'Youngling',
+      isComplete: true,
+      isReadyToLogin: false
     };
   }
 
@@ -21,52 +23,65 @@ class LoginForm extends Component {
   };
 
   handleChange = event => {
-    event.preventDefault();
     this.setState({ [event.target.name]: event.target.value });
   };
 
   handleSubmit = () => {
     const { name, quote, rank } = this.state;
-    this.props.setupUserProfile(name, quote, rank);
-    this.resetInputFields();
+    if (name && quote) {
+      this.props.setupUserProfile(name, quote, rank);
+      this.setState({ isReadyToLogin: true, isComplete: true });
+      this.resetInputFields();
+    } else {
+      this.setState({ isReadyToLogin: false, isComplete: false });
+    }
   };
 
   render() {
+    const { isReadyToLogin, isComplete } = this.state;
+    const isFormComplete = isComplete ? 'do-not-show-error' : 'show-error';
+
+    if (isReadyToLogin) {
+      return <Redirect to='/movies' />;
+    }
+
     return (
       <div className='login-page'>
         <h1>Rise of Skywalker</h1>
+
         <form>
+          <h2 className={isFormComplete}>
+            Please make sure to have all the information to get started!
+          </h2>
           <input
             type='text'
             name='name'
             value={this.state.name}
             placeholder='Enter Your Name. Ex: Finn'
-            onChange={event => this.handleChange(event)}
+            onChange={this.handleChange}
           />
           <input
             type='text'
             name='quote'
             value={this.state.quote}
             placeholder='Enter Your Favorite Quote. Ex: Finn is the best'
-            onChange={event => this.handleChange(event)}
+            onChange={this.handleChange}
           />
           <select
             name='rank'
             value={this.state.rank}
-            onChange={e => this.handleChange(e)}>
+            onChange={this.handleChange}>
             <option value='Youngling'>Youngling</option>
             <option value='Padawan'>Padawan</option>
             <option value='Jedi Knight'>Jedi Knight</option>
             <option value='Jedi Master'>Jedi Master</option>
           </select>
-          <Link className='link' to={`/movies`}>
-            <button
-              type='button'
-              className='login-btn'
-              onClick={() => this.handleSubmit()}>
-              Submit to Proceed
-            </button>
-          </Link>
+          <button
+            type='button'
+            className='login-btn'
+            onClick={this.handleSubmit}>
+            Submit to Proceed
+          </button>
         </form>
       </div>
     );

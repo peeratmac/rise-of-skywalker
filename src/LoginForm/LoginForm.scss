@@ -61,3 +61,11 @@ select {
   display: block;
   margin: auto;
 }
+
+.show-error {
+  color: red;
+}
+
+.do-not-show-error {
+  visibility: hidden;
+}
