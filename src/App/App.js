@@ -3,6 +3,7 @@ import { getAllMoviesData, setupCharactersData } from '../apiCalls';
 import LoginForm from '../LoginForm/LoginForm';
 import MovieContainer from '../MovieContainer/MovieContainer';
 import CharacterContainer from '../CharacterContainer/CharacterContainer';
+import Favorites from '../Favorites/Favorites';
 import './App.css';
 import { Route } from 'react-router-dom';
 
@@ -15,7 +16,8 @@ class App extends Component {
       userRank: '',
       allMoviesData: [],
       crawlingIndex: null,
-      selectedCharacters: []
+      selectedCharacters: [],
+      favoriteCharacters: []
     };
   }
 
@@ -75,6 +77,17 @@ class App extends Component {
               crawl={
                 this.state.allMoviesData[this.state.crawlingIndex].opening_crawl
               }
+            />
+          )}
+        />
+
+        <Route
+          exact
+          path='/favorites'
+          render={props => (
+            <Favorites
+              {...props}
+              favoriteCharacters={this.state.favoriteCharacters}
             />
           )}
         />
