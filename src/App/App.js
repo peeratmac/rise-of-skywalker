@@ -122,6 +122,18 @@ class App extends Component {
             />
           )}
         />
+
+        <Route
+          path='/favorites'
+          render={props => (
+            <Navigation
+              {...props}
+              userName={this.state.userName}
+              userQuote={this.state.userQuote}
+              userRank={this.state.userRank}
+            />
+          )}
+        />
       </div>
     );
   };
