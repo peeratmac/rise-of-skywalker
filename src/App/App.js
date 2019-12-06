@@ -4,6 +4,7 @@ import LoginForm from '../LoginForm/LoginForm';
 import MovieContainer from '../MovieContainer/MovieContainer';
 import CharacterContainer from '../CharacterContainer/CharacterContainer';
 import Favorites from '../Favorites/Favorites';
+import Navigation from '../Navigation/Navigation';
 import './App.css';
 import { Route } from 'react-router-dom';
 
@@ -106,6 +107,18 @@ class App extends Component {
               {...props}
               favoriteCharacters={this.state.favoriteCharacters}
               setupFavoriteCharacters={this.setupFavoriteCharacters}
+            />
+          )}
+        />
+
+        <Route
+          path='/movies'
+          render={props => (
+            <Navigation
+              {...props}
+              userName={this.state.userName}
+              userQuote={this.state.userQuote}
+              userRank={this.state.userRank}
             />
           )}
         />
