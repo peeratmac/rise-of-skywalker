@@ -4,21 +4,21 @@ import './Navigation.css';
 
 const Navigation = ({ userName, userQuote, userRank }) => {
   return (
-    <div>
+    <div className='card'>
       <div className='user-profile'>
-        <p>Name: {userName}</p>
-        <p>Favorite Quote: "{userQuote}"</p>
-        <p>Rank: {userRank}</p>
+        <p>{userName}</p>
+        <p>"{userQuote}"</p>
+        <p>{userRank}</p>
       </div>
       <div className='navigation-pane'>
         <Link to='/favorites'>
-          <button>Favorite Characters</button>
+          <button className='navigation-button'>Favorite Characters</button>
         </Link>
         <Link to='/movies'>
-          <button>Back to All Episodes</button>
+          <button className='navigation-button'>Back to All Episodes</button>
         </Link>
         <Link to='/'>
-          <button>Sign Out</button>
+          <button className='navigation-button'>Sign Out</button>
         </Link>
       </div>
     </div>
