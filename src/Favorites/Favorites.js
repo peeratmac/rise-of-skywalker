@@ -1,9 +1,9 @@
 import React from 'react';
+import './Favorites.css';
 import CharacterCard from '../CharacterCard/CharacterCard';
-import './CharacterContainer.css';
 
-const CharacterContainer = ({ characters, crawl, setupFavoriteCharacters }) => {
-  const allCharacters = characters.map((character, i) => {
+const Favorites = ({ favoriteCharacters, setupFavoriteCharacters }) => {
+  const allFavoriteCharacters = favoriteCharacters.map((character, i) => {
     return (
       <CharacterCard
         character={character}
@@ -15,10 +15,9 @@ const CharacterContainer = ({ characters, crawl, setupFavoriteCharacters }) => {
 
   return (
     <div>
-      <p>{crawl}</p>
-      <div className='grid-3'>{allCharacters}</div>
+      <div>{allFavoriteCharacters}</div>
     </div>
   );
 };
 
-export default CharacterContainer;
+export default Favorites;

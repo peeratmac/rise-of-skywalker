@@ -14,7 +14,7 @@ class LoginForm extends Component {
     };
   }
 
-  resetInputFields = event => {
+  resetInputFields = () => {
     this.setState({
       name: '',
       quote: '',
