@@ -43,6 +43,22 @@ class App extends Component {
     });
   };
 
+  setupFavoriteCharacters = (characterInQuestion, currentCharacterName) => {
+    const { favoriteCharacters } = this.state;
+    const allNames = favoriteCharacters.map(character => character.name);
+
+    if (allNames.includes(currentCharacterName)) {
+      const filteredCharacters = favoriteCharacters.filter(
+        character => character.name !== currentCharacterName
+      );
+      this.setState({ favoriteCharacters: filteredCharacters });
+    } else {
+      this.setState({
+        favoriteCharacters: [...favoriteCharacters, characterInQuestion]
+      });
+    }
+  };
+
   render = () => {
     return (
       <div>
@@ -77,6 +93,7 @@ class App extends Component {
               crawl={
                 this.state.allMoviesData[this.state.crawlingIndex].opening_crawl
               }
+              setupFavoriteCharacters={this.setupFavoriteCharacters}
             />
           )}
         />
@@ -88,6 +105,7 @@ class App extends Component {
             <Favorites
               {...props}
               favoriteCharacters={this.state.favoriteCharacters}
+              setupFavoriteCharacters={this.setupFavoriteCharacters}
             />
           )}
         />

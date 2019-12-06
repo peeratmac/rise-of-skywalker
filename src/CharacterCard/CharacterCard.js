@@ -3,7 +3,7 @@ import './CharacterCard.css';
 import isFavoriteFalse from '../../src/images/isFavoriteFalse.svg';
 import isFavoriteTrue from '../../src/images/isFavoriteTrue.svg';
 
-const CharacterCard = ({ character }) => {
+const CharacterCard = ({ character, setupFavoriteCharacters }) => {
   console.log('Character Card:', character);
   const episodeApperances = character.films.map((film, i) => (
     <li key={i}>{film}</li>
@@ -21,7 +21,12 @@ const CharacterCard = ({ character }) => {
         <p>Population: {character.population}</p>
         <p>Species: {character.species}</p>
         <ul className='episode-list'>Appear in: {episodeApperances}</ul>
-        <button className='button' type='button'>
+        <button
+          onClick={() =>
+            setupFavoriteCharacters({ ...character }, character.name)
+          }
+          className='button'
+          type='button'>
           Favorite
         </button>
       </div>
