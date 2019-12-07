@@ -21,6 +21,9 @@ const CharacterCard = ({
     <div>
       <div className='card'>
         <img
+          onClick={() =>
+            setupFavoriteCharacters({ ...character }, character.name)
+          }
           className={'favorite-image'}
           src={favoriteImageSource}
           alt='favorite icon'
