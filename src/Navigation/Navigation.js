@@ -2,7 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
 
-const Navigation = ({ userName, userQuote, userRank }) => {
+const Navigation = ({
+  userName,
+  userQuote,
+  userRank,
+  stateUpdateIsCharactersDataLoaded
+}) => {
   return (
     <div className='card'>
       <div className='user-profile'>
@@ -15,10 +20,18 @@ const Navigation = ({ userName, userQuote, userRank }) => {
           <button className='navigation-button'>Favorite Characters</button>
         </Link>
         <Link to='/movies'>
-          <button className='navigation-button'>Back to All Episodes</button>
+          <button
+            onClick={stateUpdateIsCharactersDataLoaded}
+            className='navigation-button'>
+            Back to All Episodes
+          </button>
         </Link>
         <Link to='/'>
-          <button className='navigation-button'>Sign Out</button>
+          <button
+            onClick={stateUpdateIsCharactersDataLoaded}
+            className='navigation-button'>
+            Sign Out
+          </button>
         </Link>
       </div>
     </div>

@@ -18,7 +18,8 @@ class App extends Component {
       allMoviesData: [],
       crawlingIndex: null,
       selectedCharacters: [],
-      favoriteCharacters: []
+      favoriteCharacters: [],
+      isCharactersDataLoaded: false
     };
   }
 
@@ -27,9 +28,13 @@ class App extends Component {
   }
 
   setupCharacters = movieIndex => {
-    setupCharactersData(movieIndex).then(data =>
-      this.setState({ selectedCharacters: data })
-    );
+    setupCharactersData(movieIndex)
+      .then(data => this.setState({ selectedCharacters: data }))
+      .then(() => this.setState({ isCharactersDataLoaded: true }));
+  };
+
+  stateUpdateIsCharactersDataLoaded = () => {
+    this.setState({ isCharactersDataLoaded: false, selectedCharacters: [] });
   };
 
   updateCrawling = episodeID => {
@@ -125,6 +130,9 @@ class App extends Component {
               userName={this.state.userName}
               userQuote={this.state.userQuote}
               userRank={this.state.userRank}
+              stateUpdateIsCharactersDataLoaded={
+                this.stateUpdateIsCharactersDataLoaded
+              }
             />
           )}
         />
@@ -137,6 +145,9 @@ class App extends Component {
               userName={this.state.userName}
               userQuote={this.state.userQuote}
               userRank={this.state.userRank}
+              stateUpdateIsCharactersDataLoaded={
+                this.stateUpdateIsCharactersDataLoaded
+              }
             />
           )}
         />
