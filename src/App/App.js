@@ -34,7 +34,7 @@ class App extends Component {
   };
 
   stateUpdateIsCharactersDataLoaded = () => {
-    this.setState({ isCharactersDataLoaded: false });
+    this.setState({ isCharactersDataLoaded: false, selectedCharacters: [] });
   };
 
   updateCrawling = episodeID => {
