@@ -95,6 +95,9 @@ class App extends Component {
                 this.state.allMoviesData[this.state.crawlingIndex].opening_crawl
               }
               setupFavoriteCharacters={this.setupFavoriteCharacters}
+              favoriteCharactersMap={this.state.favoriteCharacters.map(
+                character => character.name
+              )}
             />
           )}
         />
@@ -107,6 +110,9 @@ class App extends Component {
               {...props}
               favoriteCharacters={this.state.favoriteCharacters}
               setupFavoriteCharacters={this.setupFavoriteCharacters}
+              favoriteCharactersMap={this.state.favoriteCharacters.map(
+                character => character.name
+              )}
             />
           )}
         />
