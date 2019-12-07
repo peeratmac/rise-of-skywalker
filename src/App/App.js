@@ -33,6 +33,10 @@ class App extends Component {
       .then(() => this.setState({ isCharactersDataLoaded: true }));
   };
 
+  stateUpdateIsCharactersDataLoaded = () => {
+    this.setState({ isCharactersDataLoaded: false });
+  };
+
   updateCrawling = episodeID => {
     this.setState({ crawlingIndex: episodeID - 1 });
   };
@@ -126,6 +130,9 @@ class App extends Component {
               userName={this.state.userName}
               userQuote={this.state.userQuote}
               userRank={this.state.userRank}
+              stateUpdateIsCharactersDataLoaded={
+                this.stateUpdateIsCharactersDataLoaded
+              }
             />
           )}
         />
@@ -138,6 +145,9 @@ class App extends Component {
               userName={this.state.userName}
               userQuote={this.state.userQuote}
               userRank={this.state.userRank}
+              stateUpdateIsCharactersDataLoaded={
+                this.stateUpdateIsCharactersDataLoaded
+              }
             />
           )}
         />
