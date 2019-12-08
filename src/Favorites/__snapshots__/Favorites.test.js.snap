@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FAVORITES should match the Favorites Component Snapshot 1`] = `
+<Fragment>
+  <h2>
+    You can favorite any of the characters you like by pressing the cute BB8 icon or the favorite button on each character!
+  </h2>
+  <img
+    alt="BB8 Icon"
+    className="bb8-image"
+    src="isFavoriteFalse.svg"
+  />
+</Fragment>
+`;
