@@ -7,7 +7,8 @@ const Navigation = ({
   userQuote,
   userRank,
   stateUpdateIsCharactersDataLoaded,
-  numberOfFavoriteCharacters
+  numberOfFavoriteCharacters,
+  clearFavoritesUponSignout
 }) => {
   return (
     <div className='card'>
@@ -31,7 +32,9 @@ const Navigation = ({
         </Link>
         <Link to='/'>
           <button
-            onClick={stateUpdateIsCharactersDataLoaded}
+            onClick={
+              (stateUpdateIsCharactersDataLoaded, clearFavoritesUponSignout)
+            }
             className='navigation-button'>
             Sign Out
           </button>
