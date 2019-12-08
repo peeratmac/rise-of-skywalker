@@ -6,7 +6,8 @@ const Navigation = ({
   userName,
   userQuote,
   userRank,
-  stateUpdateIsCharactersDataLoaded
+  stateUpdateIsCharactersDataLoaded,
+  numberOfFavoriteCharacters
 }) => {
   return (
     <div className='card'>
@@ -17,7 +18,9 @@ const Navigation = ({
       </div>
       <div className='navigation-pane'>
         <Link to='/favorites'>
-          <button className='navigation-button'>Favorite Characters</button>
+          <button className='navigation-button'>
+            Favorite Characters ({numberOfFavoriteCharacters.length})
+          </button>
         </Link>
         <Link to='/movies'>
           <button

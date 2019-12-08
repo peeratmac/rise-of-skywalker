@@ -133,6 +133,7 @@ class App extends Component {
               stateUpdateIsCharactersDataLoaded={
                 this.stateUpdateIsCharactersDataLoaded
               }
+              numberOfFavoriteCharacters={this.state.favoriteCharacters}
             />
           )}
         />
@@ -148,6 +149,7 @@ class App extends Component {
               stateUpdateIsCharactersDataLoaded={
                 this.stateUpdateIsCharactersDataLoaded
               }
+              numberOfFavoriteCharacters={this.state.favoriteCharacters}
             />
           )}
         />
