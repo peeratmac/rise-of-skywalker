@@ -9,7 +9,8 @@ describe('APP', () => {
     wrapper = shallow(<App />);
   });
 
-  it('should match the APP Component Snapshot', () => {
+  it('should match the App Component Snapshot', () => {
+    wrapper = shallow(<App />);
     expect(wrapper).toMatchSnapshot();
   });
 });

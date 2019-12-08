@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CHARACTER CARD should match the CharacterCard Component Snapshot 1`] = `
+<div>
+  <div
+    className="card"
+  >
+    <img
+      alt="favorite icon"
+      className="favorite-image"
+      onClick={[Function]}
+      src="isFavoriteFalse.svg"
+    />
+    <h2>
+      Name: 
+      BB8
+    </h2>
+    <p>
+      Homeworld: 
+      SpaceX Occupying Mars
+    </p>
+    <p>
+      Population: 
+    </p>
+    <p>
+      Species: 
+      Human
+    </p>
+    <ul
+      className="episode-list"
+    >
+      Appear in: 
+      <li
+        key="0"
+      >
+        The Day After Tomorrow
+      </li>
+      <li
+        key="1"
+      >
+        The Martian
+      </li>
+      <li
+        key="2"
+      >
+        Gravity
+      </li>
+    </ul>
+    <button
+      className="button"
+      onClick={[Function]}
+      type="button"
+    >
+      Favorite
+    </button>
+  </div>
+</div>
+`;
