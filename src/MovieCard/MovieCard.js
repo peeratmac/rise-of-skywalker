@@ -16,7 +16,7 @@ const MovieCard = ({
     <div className='card'>
       <h2>{title}</h2>
       <h3>Episode: {episode_id}</h3>
-      <h3>Release: {release_date}</h3>
+      <h3>Release: {release_date.slice(0, 4)}</h3>
       <Link to={`/movies/${id}`}>
         <button
           id={episode_id}
