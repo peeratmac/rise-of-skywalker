@@ -20,7 +20,7 @@ const MovieCard = ({
       <Link to={`/movies/${id}`}>
         <button
           id={episode_id}
-          className='button'
+          className='movie-card-button'
           type='button'
           onClick={() => {
             updateCrawling(movieIndex + 1);
