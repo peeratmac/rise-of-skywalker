@@ -65,6 +65,10 @@ class App extends Component {
     }
   };
 
+  clearFavoritesUponSignout = () => {
+    this.setState({ favoriteCharacters: [] });
+  };
+
   render = () => {
     return (
       <div>
@@ -133,6 +137,8 @@ class App extends Component {
               stateUpdateIsCharactersDataLoaded={
                 this.stateUpdateIsCharactersDataLoaded
               }
+              numberOfFavoriteCharacters={this.state.favoriteCharacters}
+              clearFavoritesUponSignout={this.clearFavoritesUponSignout}
             />
           )}
         />
@@ -148,6 +154,8 @@ class App extends Component {
               stateUpdateIsCharactersDataLoaded={
                 this.stateUpdateIsCharactersDataLoaded
               }
+              numberOfFavoriteCharacters={this.state.favoriteCharacters}
+              clearFavoritesUponSignout={this.clearFavoritesUponSignout}
             />
           )}
         />
