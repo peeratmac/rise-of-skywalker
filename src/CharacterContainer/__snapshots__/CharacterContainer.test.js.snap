@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CHARACTER CONTAINER should match the CharacterCard Component Snapshot 1`] = `undefined`;
-
 exports[`CHARACTER CONTAINER should match the CharacterContainer Component Snapshot 1`] = `
 <Fragment>
   <h2>
