@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LOGIN FORM should match the LoginForm Component Snapshot 1`] = `
+<div
+  className="login-page"
+>
+  <h1>
+    Rise of Skywalker
+  </h1>
+  <form>
+    <h2
+      className="do-not-show-error"
+    >
+      Please make sure to have all the information to get started!
+    </h2>
+    <input
+      name="name"
+      onChange={[Function]}
+      placeholder="Enter Your Name. Ex: Finn"
+      type="text"
+      value=""
+    />
+    <input
+      name="quote"
+      onChange={[Function]}
+      placeholder="Enter Your Favorite Quote. Ex: Finn is the best"
+      type="text"
+      value=""
+    />
+    <select
+      name="rank"
+      onChange={[Function]}
+      value="Youngling"
+    >
+      <option
+        value="Youngling"
+      >
+        Youngling
+      </option>
+      <option
+        value="Padawan"
+      >
+        Padawan
+      </option>
+      <option
+        value="Jedi Knight"
+      >
+        Jedi Knight
+      </option>
+      <option
+        value="Jedi Master"
+      >
+        Jedi Master
+      </option>
+    </select>
+    <button
+      className="login-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      Submit to Proceed
+    </button>
+  </form>
+</div>
+`;

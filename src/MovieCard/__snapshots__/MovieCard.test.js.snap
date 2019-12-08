@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CHARACTER CONTAINER should match the MovieCard Component Snapshot 1`] = `undefined`;
-
 exports[`MOVIE CARD should match the MovieCard Component Snapshot 1`] = `
 <div
   className="card"
