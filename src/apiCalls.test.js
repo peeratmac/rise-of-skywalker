@@ -580,5 +580,16 @@ describe('API CALLS', () => {
     it('should return an array of allMoviesData sorted by episode_id', () => {
       expect(getAllMoviesData()).resolves.toEqual(getAllMoviesDataResponse);
     });
+
+    it('should return an error if Promise rejects', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: false
+        });
+      });
+      expect(getAllMoviesData()).rejects.toEqual(
+        Error('Error: undefined, please check and try again.')
+      );
+    });
   });
 });
