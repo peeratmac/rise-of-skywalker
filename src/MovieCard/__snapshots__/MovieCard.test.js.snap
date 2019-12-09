@@ -2,7 +2,7 @@
 
 exports[`MOVIE CARD should match the MovieCard Component Snapshot 1`] = `
 <div
-  className="card"
+  className="movie-card"
 >
   <h2>
     Rise of Skywalker
@@ -19,7 +19,7 @@ exports[`MOVIE CARD should match the MovieCard Component Snapshot 1`] = `
     to="/movies/8"
   >
     <button
-      className="button"
+      className="movie-card-button"
       id={8}
       onClick={[Function]}
       type="button"
