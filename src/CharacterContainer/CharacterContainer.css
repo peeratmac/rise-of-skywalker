@@ -4,3 +4,6 @@
   flex-wrap: wrap;
 }
 
+.crawling-text {
+  background-image: url('../images/scrawl-sky.jpg')
+}

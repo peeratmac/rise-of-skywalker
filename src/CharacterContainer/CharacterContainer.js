@@ -13,7 +13,7 @@ const CharacterContainer = ({
     return (
       <React.Fragment>
         <h2>RISE OF SKYWALKER is working hard for you!</h2>
-        <h2>Enjoy our BB8 acting cute while the page is loading...</h2>
+        <h2>Enjoy BB8 acting cute while the page is loading...</h2>
         <img src={loadingImage} alt='Loading Image of BB8' />
       </React.Fragment>
     );
@@ -31,10 +31,13 @@ const CharacterContainer = ({
   });
 
   return (
-    <div>
-      <p>{crawl}</p>
-      <div className='grid-3'>{allCharacters}</div>
-    </div>
+    <section className='character-container'>
+      <div className='crawl-container'>
+        <p className='crawling-text'>{crawl}</p>
+      </div>
+      <div className='grid-3'>        {allCharacters}
+      </div>
+    </section>
   );
 };
 
