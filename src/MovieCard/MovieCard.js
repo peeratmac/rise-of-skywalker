@@ -13,14 +13,14 @@ const MovieCard = ({
   id
 }) => {
   return (
-    <div className='card'>
+    <div className='movie-card'>
       <h2>{title}</h2>
       <h3>Episode: {episode_id}</h3>
       <h3>Release: {release_date.slice(0, 4)}</h3>
       <Link to={`/movies/${id}`}>
         <button
           id={episode_id}
-          className='button'
+          className='movie-card-button'
           type='button'
           onClick={() => {
             updateCrawling(movieIndex + 1);

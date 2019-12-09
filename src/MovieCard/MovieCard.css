@@ -1,18 +1,42 @@
-.card {
-  padding: 1rem;
-  border: #ccc 1px dotted;
-  margin: 0.7rem 0;
+* {
+  box-sizing: border-box;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 
-.button {
-  display: inline-block;
-  background: lightblue;
-  color: #333;
-  padding: 0.4rem 1.3rem;
-  font-size: 1rem;
-  border: none;
+.movie-card {
+  background-color: #04243D;
+  border: 8px ridge #FFF;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 21px;
+  justify-content: space-between;
+  width: 18%;
+  height: 300px;
+  margin: 15px;
+  padding: 1.5rem;
+  color: #FFF;
+}
+
+h2 {
+  font-family: 'Squada One', cursive;
+  letter-spacing: 1px;
+  font-size: 30px;
+}
+
+.movie-card-button {
+  background: #FFF;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  color: #04243D;
   cursor: pointer;
-  margin-right: 0.5rem;
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0.4rem 1.3rem;
   transition: opacity 0.2s ease-in;
-  outline: none;
+  font-weight: bold; 
+}
+
+.movie-card-button :hover {
+  cursor: pointer;
 }

@@ -1,5 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+
 .grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
+  background-attachment: fixed;
+  background-image: url('../images/fleet-img.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 50px;
+  justify-content: center;
 }
