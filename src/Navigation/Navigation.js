@@ -13,9 +13,9 @@ const Navigation = ({
   return (
     <div className='card'>
       <div className='user-profile'>
-        <p>{userName}</p>
-        <p>"{userQuote}"</p>
-        <p>{userRank}</p>
+        <p className='user-name'>{userName}</p>
+        <p className='user-quote'>"{userQuote}"</p>
+        <p className='user-rank'>{userRank}</p>
       </div>
       <div className='navigation-pane'>
         <Link to='/favorites'>

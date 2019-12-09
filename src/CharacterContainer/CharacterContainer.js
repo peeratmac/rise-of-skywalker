@@ -31,7 +31,7 @@ const CharacterContainer = ({
   });
 
   return (
-    <div class='character-container'>
+    <div className='character-container'>
       <p className='crawl'>{crawl}</p>
       <div className='grid-3'>{allCharacters}</div>
     </div>
