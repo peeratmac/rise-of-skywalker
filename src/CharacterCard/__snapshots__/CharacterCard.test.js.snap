@@ -3,7 +3,7 @@
 exports[`CHARACTER CARD should match the CharacterCard Component Snapshot 1`] = `
 <div>
   <div
-    className="card"
+    className="character-card"
   >
     <img
       alt="favorite icon"
@@ -12,7 +12,6 @@ exports[`CHARACTER CARD should match the CharacterCard Component Snapshot 1`] = 
       src="isFavoriteFalse.svg"
     />
     <h2>
-      Name: 
       BB8
     </h2>
     <p>
@@ -29,7 +28,7 @@ exports[`CHARACTER CARD should match the CharacterCard Component Snapshot 1`] = 
     <ul
       className="episode-list"
     >
-      Appear in: 
+      Appears in: 
       <li
         key="0"
       >
@@ -47,7 +46,7 @@ exports[`CHARACTER CARD should match the CharacterCard Component Snapshot 1`] = 
       </li>
     </ul>
     <button
-      className="button"
+      className="character-card-button"
       onClick={[Function]}
       type="button"
     >
