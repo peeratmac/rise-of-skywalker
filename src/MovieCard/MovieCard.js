@@ -13,7 +13,7 @@ const MovieCard = ({
   id
 }) => {
   return (
-    <div className='card'>
+    <div className='movie-card'>
       <h2>{title}</h2>
       <h3>Episode: {episode_id}</h3>
       <h3>Release: {release_date.slice(0, 4)}</h3>

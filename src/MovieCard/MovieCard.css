@@ -3,7 +3,7 @@
   font-family: 'PT Sans Narrow', sans-serif;
 }
 
-div.card {
+.movie-card {
   background-color: #04243D;
   border: 8px ridge #FFF;
   text-align: center;
@@ -18,7 +18,7 @@ div.card {
   color: #FFF;
 }
 
-div.card > h2 {
+h2 {
   font-family: 'Squada One', cursive;
   letter-spacing: 1px;
   font-size: 30px;
@@ -27,6 +27,7 @@ div.card > h2 {
 .movie-card-button {
   background: #FFF;
   border: 2px solid #fff;
+  border-radius: 3px;
   color: #04243D;
   cursor: pointer;
   display: inline-block;

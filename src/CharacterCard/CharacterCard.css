@@ -1,28 +1,43 @@
-.card {
-  padding: 1rem;
-  border: #ccc 1px dotted;
-  margin: 0.7rem 0;
+* {
+  box-sizing: border-box;
+  font-family: 'PT Sans Narrow', sans-serif;
 }
 
-.button {
-  display: inline-block;
-  background: lightblue;
-  color: #333;
-  padding: 0.4rem 1.3rem;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  margin-right: 0.5rem;
-  transition: opacity 0.2s ease-in;
-  outline: none;
+.character-card {
+  background-color: #04243D;
+  border: 8px ridge #FFF;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 21px;
+  justify-content: space-between;
+  width: 100%;
+  margin: 15px;
+  padding: 1.5rem;
+  color: #FFF;
 }
 
 .favorite-image {
   cursor: pointer;
   transition: opacity 0.2s ease-in;
   width: 50px;
+  color: #FFF;
 }
 
 .episode-list {
-  height: 200px;
+  min-height: 200px;
+  list-style: none;
+}
+
+.character-card-button {
+  background: #FFF;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  color: #04243D;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0.4rem 1.3rem;
+  transition: opacity 0.2s ease-in;
+  font-weight: bold;
 }
