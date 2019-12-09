@@ -20,9 +20,9 @@ const CharacterCard = ({
   return (
     <div>
       <div className='character-card'>
-        <h2>{character.name}</h2>
+        <h2 className='character-name'>{character.name}</h2>
         <p>Homeworld: {character.homeworld}</p>
-        <p>Population: {character.population}</p>
+        <p className='population'>Population: {character.population}</p>
         <p>Species: {character.species}</p>
         <ul className='episode-list'>Appears in: {episodeApperances}</ul>
         <img
