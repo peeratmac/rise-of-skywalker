@@ -594,9 +594,11 @@ describe('API CALLS', () => {
 
     it('should return an error if Promise rejects (SAD PATH)', () => {
       window.fetch = jest.fn().mockImplementation(() => {
-        return Promise.reject(Error('Fetch has failed'));
+        return Promise.reject(Error('Fetch has failed - Reject Promise'));
       });
-      expect(getAllMoviesData()).rejects.toEqual(Error('Fetch has failed'));
+      expect(getAllMoviesData()).rejects.toEqual(
+        Error('Fetch has failed - Reject promise')
+      );
     });
   });
 
@@ -604,15 +606,21 @@ describe('API CALLS', () => {
     let characters;
 
     beforeEach(() => {
-      characters = {
-        homeworld: ['https://swapi.co/api/planets/5/']
-      };
+      characters = [
+        {
+          homeworld: ['https://swapi.co/api/planets/5/'],
+          name: 'Peerat',
+          population: '200000',
+          species: 'Human'
+        }
+      ];
     });
 
     // ! NEED to check this one for its accuracy
     it('should fetch the individual HOMEWORLD data', () => {
-      getIndividualHomeworld(characters.homeworld);
-      expect(getIndividualHomeworld(characters.homeworld)).toEqual(
+      console.log(characters[0].homeworld);
+      getIndividualHomeworld(characters[0].homeworld);
+      expect(getIndividualHomeworld(characters[0].homeworld)).toEqual(
         Promise.resolve()
       );
     });
