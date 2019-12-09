@@ -581,7 +581,7 @@ describe('API CALLS', () => {
       expect(getAllMoviesData()).resolves.toEqual(getAllMoviesDataResponse);
     });
 
-    it('should return an error if Promise rejects', () => {
+    it('should return an error (SAD PATH)', () => {
       window.fetch = jest.fn().mockImplementation(() => {
         return Promise.resolve({
           ok: false
@@ -589,6 +589,31 @@ describe('API CALLS', () => {
       });
       expect(getAllMoviesData()).rejects.toEqual(
         Error('Error: undefined, please check and try again.')
+      );
+    });
+
+    it('should return an error if Promise rejects (SAD PATH)', () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject(Error('Fetch has failed'));
+      });
+      expect(getAllMoviesData()).rejects.toEqual(Error('Fetch has failed'));
+    });
+  });
+
+  describe('GET INDIVIDUAL HOMEWORLD', () => {
+    let characters;
+
+    beforeEach(() => {
+      characters = {
+        homeworld: ['https://swapi.co/api/planets/5/']
+      };
+    });
+
+    // ! NEED to check this one for its accuracy
+    it('should fetch the individual HOMEWORLD data', () => {
+      getIndividualHomeworld(characters.homeworld);
+      expect(getIndividualHomeworld(characters.homeworld)).toEqual(
+        Promise.resolve()
       );
     });
   });
