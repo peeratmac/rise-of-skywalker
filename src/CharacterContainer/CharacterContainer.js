@@ -32,8 +32,10 @@ const CharacterContainer = ({
 
   return (
     <section className='character-container'>
+      <div className='fade'>
       <div className='crawl-container'>
         <p className='crawling-text'>{crawl}</p>
+      </div>
       </div>
       <div className='grid-3'>        {allCharacters}
       </div>
