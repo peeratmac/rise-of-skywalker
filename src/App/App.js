@@ -5,8 +5,8 @@ import MovieContainer from '../MovieContainer/MovieContainer';
 import CharacterContainer from '../CharacterContainer/CharacterContainer';
 import Favorites from '../Favorites/Favorites';
 import Navigation from '../Navigation/Navigation';
-import './App.css';
 import { Route } from 'react-router-dom';
+import './App.css';
 
 class App extends Component {
   constructor() {

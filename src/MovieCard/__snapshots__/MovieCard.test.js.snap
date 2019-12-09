@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MOVIE CARD should match the MovieCard Component Snapshot 1`] = `
+<div
+  className="card"
+>
+  <h2>
+    Rise of Skywalker
+  </h2>
+  <h3>
+    Episode: 
+    8
+  </h3>
+  <h3>
+    Release: 
+    2019
+  </h3>
+  <Link
+    to="/movies/8"
+  >
+    <button
+      className="button"
+      id={8}
+      onClick={[Function]}
+      type="button"
+    >
+      View Characters
+    </button>
+  </Link>
+</div>
+`;
