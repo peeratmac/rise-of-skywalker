@@ -4,8 +4,8 @@
 }
 
 .movie-card {
-  background-color: #04243D;
-  border: 8px ridge #FFF;
+  background-color: #04243d;
+  border: 8px ridge #fff;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,8 @@
   height: 300px;
   margin: 15px;
   padding: 1.5rem;
-  color: #FFF;
+  color: #fff;
+  border-radius: 20px;
 }
 
 h2 {
@@ -25,16 +26,16 @@ h2 {
 }
 
 .movie-card-button {
-  background: #FFF;
+  background: #fff;
   border: 2px solid #fff;
   border-radius: 3px;
-  color: #04243D;
+  color: #04243d;
   cursor: pointer;
   display: inline-block;
   font-size: 1.2rem;
   padding: 0.4rem 1.3rem;
   transition: opacity 0.2s ease-in;
-  font-weight: bold; 
+  font-weight: bold;
 }
 
 .movie-card-button :hover {
