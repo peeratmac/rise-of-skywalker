@@ -35,6 +35,14 @@ p {
   padding-top: 20px;
 }
 
+.character-name {
+  height: 100px;
+}
+
+.population {
+  height: 100px;
+}
+
 .character-card-button {
   background: #fff;
   border: 2px solid #fff;
@@ -46,4 +54,8 @@ p {
   padding: 0.4rem 1.3rem;
   transition: opacity 0.2s ease-in;
   font-weight: bold;
+}
+
+.character-card-button:focus {
+  outline: none;
 }
