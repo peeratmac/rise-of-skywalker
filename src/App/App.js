@@ -19,12 +19,15 @@ class App extends Component {
       crawlingIndex: null,
       selectedCharacters: [],
       favoriteCharacters: [],
-      isCharactersDataLoaded: false
+      isCharactersDataLoaded: false,
+      error: ''
     };
   }
 
   componentDidMount() {
-    getAllMoviesData().then(data => this.setState({ allMoviesData: data }));
+    getAllMoviesData()
+      .then(data => this.setState({ allMoviesData: data }))
+      .catch(error => this.setState({ error: error.message }));
   }
 
   setupCharacters = movieIndex => {
