@@ -1,6 +1,14 @@
-.grid-3 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.character-container {
+  margin: 20px;
 }
 
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1rem;
+}
+
+.crawl {
+  font-size: 30px;
+  margin: 20px;
+}

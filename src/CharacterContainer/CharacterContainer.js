@@ -31,8 +31,8 @@ const CharacterContainer = ({
   });
 
   return (
-    <div>
-      <p>{crawl}</p>
+    <div class='character-container'>
+      <p className='crawl'>{crawl}</p>
       <div className='grid-3'>{allCharacters}</div>
     </div>
   );

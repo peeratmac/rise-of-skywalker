@@ -20,6 +20,11 @@ const CharacterCard = ({
   return (
     <div>
       <div className='character-card'>
+        <h2>{character.name}</h2>
+        <p>Homeworld: {character.homeworld}</p>
+        <p>Population: {character.population}</p>
+        <p>Species: {character.species}</p>
+        <ul className='episode-list'>Appears in: {episodeApperances}</ul>
         <img
           onClick={() =>
             setupFavoriteCharacters({ ...character }, character.name)
@@ -28,11 +33,6 @@ const CharacterCard = ({
           src={favoriteImageSource}
           alt='favorite icon'
         />
-        <h2>{character.name}</h2>
-        <p>Homeworld: {character.homeworld}</p>
-        <p>Population: {character.population}</p>
-        <p>Species: {character.species}</p>
-        <ul className='episode-list'>Appears in: {episodeApperances}</ul>
         <button
           onClick={() =>
             setupFavoriteCharacters({ ...character }, character.name)
