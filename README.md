@@ -30,3 +30,5 @@ This was a one-week, paired project built using React. We utilized the Fetch API
 3. Npm install 
 4. Npm start
 5. Open http://localhost:3000
+
+### Screenshots
