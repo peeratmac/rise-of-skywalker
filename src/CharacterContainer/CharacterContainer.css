@@ -64,7 +64,7 @@ img {
 
 @keyframes crawl {
   0% {
-    top: 250px;
+    top: 150px;
     transform: rotateX(20deg) translateZ(0);
   }
   100% {
