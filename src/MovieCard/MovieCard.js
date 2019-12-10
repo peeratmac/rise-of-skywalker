@@ -38,5 +38,9 @@ export default MovieCard;
 MovieCard.propTypes = {
   title: PropTypes.string.isRequired,
   episode_id: PropTypes.number.isRequired,
-  release_date: PropTypes.string.isRequired
+  release_date: PropTypes.string.isRequired,
+  setupCharacters: PropTypes.func.isRequired,
+  updateCrawling: PropTypes.func.isRequired,
+  movieIndex: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired
 };

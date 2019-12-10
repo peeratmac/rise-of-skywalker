@@ -2,13 +2,13 @@ import React from 'react';
 import './CharacterCard.css';
 import isFavoriteFalse from '../../src/images/isFavoriteFalse.svg';
 import isFavoriteTrue from '../../src/images/isFavoriteTrue.svg';
+import PropTypes from 'prop-types';
 
 const CharacterCard = ({
   character,
   setupFavoriteCharacters,
   favoriteCharactersMap
 }) => {
-  console.log('Character Card:', character);
   const favoriteImageSource =
     favoriteCharactersMap && favoriteCharactersMap.includes(character.name)
       ? isFavoriteTrue
@@ -47,3 +47,9 @@ const CharacterCard = ({
 };
 
 export default CharacterCard;
+
+CharacterCard.propTypes = {
+  character: PropTypes.object.isRequired,
+  setupFavoriteCharacters: PropTypes.func.isRequired,
+  favoriteCharactersMap: PropTypes.array
+};

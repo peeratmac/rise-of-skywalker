@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import './Favorites.css';
 import isFavoriteFalse from '../../src/images/isFavoriteFalse.svg';
 import CharacterCard from '../CharacterCard/CharacterCard';
