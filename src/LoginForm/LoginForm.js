@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './LoginForm.scss';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 class LoginForm extends Component {
   constructor() {

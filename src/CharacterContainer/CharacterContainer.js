@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import CharacterCard from '../CharacterCard/CharacterCard';
 import loadingImage from '../images/loadingBB8.gif';
 import './CharacterContainer.css';
@@ -15,7 +15,7 @@ const CharacterContainer = ({
         <React.Fragment>
           <h2>RISE OF SKYWALKER is working hard for you!</h2>
           <h2>Enjoy BB8 acting cute while the page is loading...</h2>
-          <img src={loadingImage} alt='Loading Image of BB8' />
+          <img src={loadingImage} alt='Loading Graphics of BB8' />
         </React.Fragment>
       </div>
     );
