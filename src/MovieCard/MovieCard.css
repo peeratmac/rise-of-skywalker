@@ -5,37 +5,37 @@
 
 .movie-card {
   background-color: #04243d;
+  border-radius: 20px;
   border: 8px ridge #fff;
-  text-align: center;
+  color: #fff;
   display: flex;
   flex-direction: column;
   font-size: 21px;
-  justify-content: space-between;
-  width: 18%;
   height: 300px;
+  justify-content: space-between;
   margin: 15px;
   padding: 1.5rem;
-  color: #fff;
-  border-radius: 20px;
+  text-align: center;
+  width: 18%;
 }
 
 h2 {
   font-family: 'Squada One', cursive;
-  letter-spacing: 1px;
   font-size: 30px;
+  letter-spacing: 1px;
 }
 
 .movie-card-button {
   background: #fff;
-  border: 2px solid #fff;
   border-radius: 3px;
+  border: 2px solid #fff;
   color: #04243d;
   cursor: pointer;
   display: inline-block;
   font-size: 1.2rem;
+  font-weight: bold;
   padding: 0.4rem 1.3rem;
   transition: opacity 0.2s ease-in;
-  font-weight: bold;
 }
 
 .movie-card-button :hover {
