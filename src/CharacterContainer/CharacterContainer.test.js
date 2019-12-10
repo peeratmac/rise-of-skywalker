@@ -6,7 +6,8 @@ describe('CHARACTER CONTAINER', () => {
   let wrapper;
 
   const mockCharacters = [];
-  const mockCrawl = '';
+  const mockCrawl =
+    'Rise of Skywalker is all about Finn and friends...in the galaxy, far, far away.';
   const mockSetupFavoriteCharacters = jest.fn();
   const mockFavoriteCharactersMap = [];
 

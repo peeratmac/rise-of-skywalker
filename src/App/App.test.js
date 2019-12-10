@@ -58,19 +58,88 @@ describe.only('APP', () => {
     expect(setupCharactersData).toHaveBeenCalled();
   });
 
-  it('should reset the character data state', () => {
+  it('should update state with the call on stateUpdateIsCharactersDataLoaded', () => {
     const startState = {
       isCharactersDataLoaded: true,
       selectedCharacters: [{ name: 'Leia' }, { name: 'Jabba the Hutt' }]
     };
-    const endState = { isCharactersDataLoaded: false, selectedCharacters: [] };
 
     wrapper.setState(startState);
-
     wrapper.instance().stateUpdateIsCharactersDataLoaded();
-
     expect(wrapper.state().isCharactersDataLoaded).toEqual(false);
-
     expect(wrapper.state().selectedCharacters).toEqual([]);
+  });
+
+  it('should be able to updateCrawling text', () => {
+    wrapper = shallow(<App />);
+    wrapper.instance().updateCrawling(7);
+    expect(wrapper.state('crawlingIndex')).toEqual(6);
+  });
+
+  it('should clear favorites upon user signing out', () => {
+    wrapper = shallow(<App />);
+    wrapper.setState({
+      favoriteCharacters: [
+        {
+          name: 'Peerat',
+          species: 'Human',
+          films: ['The Lion King', 'Rise of Skywalker'],
+          homeworld: 'Earth'
+        }
+      ]
+    });
+    wrapper.instance().clearFavoritesUponSignout();
+    expect(wrapper.state('favoriteCharacters')).toEqual([]);
+  });
+
+  it.skip('should be able to setupFavoriteCharacters by using the character names to search through', () => {
+    wrapper = shallow(<App />);
+    wrapper.setState({
+      favoriteCharacters: [
+        {
+          name: 'Peerat',
+          species: 'Human',
+          films: ['The Lion King', 'Rise of Skywalker'],
+          homeworld: 'Earth'
+        },
+        {
+          name: 'Consuelo',
+          species: 'Vegan Cake',
+          films: ['What the Health', 'Rise of Skywalker'],
+          homeworld: 'Earth'
+        }
+      ]
+    });
+
+    wrapper.instance().setupFavoriteCharacters(
+      {
+        name: 'Peerat2',
+        species: 'Human2',
+        films: ['The Lion King 2', 'Rise of Skywalker 2'],
+        homeworld: 'Earth 2'
+      },
+      'Peerat'
+    );
+
+    expect(wrapper.state('favoriteCharacters')).toEqual([
+      {
+        name: 'Peerat',
+        species: 'Human',
+        films: ['The Lion King', 'Rise of Skywalker'],
+        homeworld: 'Earth'
+      },
+      {
+        name: 'Consuelo',
+        species: 'Vegan Cake',
+        films: ['What the Health', 'Rise of Skywalker'],
+        homeworld: 'Earth'
+      },
+      {
+        name: 'Peerat2',
+        species: 'Human2',
+        films: ['The Lion King 2', 'Rise of Skywalker 2'],
+        homeworld: 'Earth 2'
+      }
+    ]);
   });
 });
