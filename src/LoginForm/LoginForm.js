@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './LoginForm.scss';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import title from '../images/title-logo.webp'
+
 
 class LoginForm extends Component {
   constructor() {
@@ -48,8 +50,9 @@ class LoginForm extends Component {
 
     return (
       <div className='login-page'>
-        <h1>Rise of Skywalker</h1>
-
+        <h1>
+        <img src={title} className='logo' alt='Star Wars Title'/>
+        </h1>
         <form>
           <input
             type='text'
