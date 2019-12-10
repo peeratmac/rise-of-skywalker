@@ -7,15 +7,21 @@ exports[`Navigation should match the Navigation Component Snapshot 1`] = `
   <div
     className="user-profile"
   >
-    <p>
+    <p
+      className="user-name"
+    >
       Peerat
     </p>
-    <p>
+    <p
+      className="user-quote"
+    >
       "
       Naomi is amazing!
       "
     </p>
-    <p>
+    <p
+      className="user-rank"
+    >
       Jedi Master
     </p>
   </div>

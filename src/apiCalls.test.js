@@ -3,7 +3,7 @@ import {
   getIndividualHomeworld,
   getIndividualSpecies,
   getIndividualFilms,
-  setupCharacters,
+  setupCharactersData,
   cleanUpForSetUp
 } from './apiCalls';
 
@@ -597,7 +597,7 @@ describe('API CALLS', () => {
         return Promise.reject(Error('Fetch has failed - Reject Promise'));
       });
       expect(getAllMoviesData()).rejects.toEqual(
-        Error('Fetch has failed - Reject promise')
+        Error('Fetch has failed - Reject Promise')
       );
     });
   });
@@ -609,20 +609,87 @@ describe('API CALLS', () => {
       characters = [
         {
           homeworld: ['https://swapi.co/api/planets/5/'],
-          name: 'Peerat',
-          population: '200000',
-          species: 'Human'
+          species: ['https://swapi.co/api/species/1/'],
+          films: [
+            'https://swapi.co/api/films/7/',
+            'https://swapi.co/api/films/6/',
+            'https://swapi.co/api/films/3/',
+            'https://swapi.co/api/films/2/',
+            'https://swapi.co/api/films/4/'
+          ],
+          name: 'Peerat'
         }
       ];
     });
 
-    // ! NEED to check this one for its accuracy
     it('should fetch the individual HOMEWORLD data', () => {
-      console.log(characters[0].homeworld);
       getIndividualHomeworld(characters[0].homeworld);
       expect(getIndividualHomeworld(characters[0].homeworld)).toEqual(
         Promise.resolve()
       );
+    });
+  });
+
+  describe('GET INDIVIDUAL SPECIES', () => {
+    let characters;
+
+    beforeEach(() => {
+      characters = [
+        {
+          homeworld: ['https://swapi.co/api/planets/5/'],
+          species: ['https://swapi.co/api/species/1/'],
+          films: [
+            'https://swapi.co/api/films/7/',
+            'https://swapi.co/api/films/6/',
+            'https://swapi.co/api/films/3/',
+            'https://swapi.co/api/films/2/',
+            'https://swapi.co/api/films/4/'
+          ],
+          name: 'Peerat'
+        }
+      ];
+    });
+
+    it('should fetch the individual SPECIES data', () => {
+      getIndividualSpecies(characters[0].species);
+      expect(getIndividualSpecies(characters[0].species)).toEqual(
+        Promise.resolve()
+      );
+    });
+  });
+
+  describe('GET INDIVIDUAL FILMS', () => {
+    let characters;
+
+    beforeEach(() => {
+      characters = [
+        {
+          homeworld: ['https://swapi.co/api/planets/5/'],
+          species: ['https://swapi.co/api/species/1/'],
+          films: [
+            'https://swapi.co/api/films/7/',
+            'https://swapi.co/api/films/6/',
+            'https://swapi.co/api/films/3/',
+            'https://swapi.co/api/films/2/',
+            'https://swapi.co/api/films/4/'
+          ],
+          name: 'Peerat'
+        }
+      ];
+    });
+
+    it.skip('should fetch the individual FILMS data', () => {
+      getIndividualFilms(characters[0].films);
+      expect(getIndividualFilms(characters[0].films)).toEqual(
+        Promise.resolve()
+      );
+    });
+  });
+
+  describe('SETUP CHARACTERS DATA', () => {
+    it('should fetch to setup all the characters data to be in place', () => {
+      setupCharactersData(4);
+      expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/films/4');
     });
   });
 });

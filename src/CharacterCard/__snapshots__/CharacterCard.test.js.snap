@@ -5,20 +5,18 @@ exports[`CHARACTER CARD should match the CharacterCard Component Snapshot 1`] = 
   <div
     className="character-card"
   >
-    <img
-      alt="favorite icon"
-      className="favorite-image"
-      onClick={[Function]}
-      src="isFavoriteFalse.svg"
-    />
-    <h2>
+    <h2
+      className="character-name"
+    >
       BB8
     </h2>
     <p>
       Homeworld: 
       SpaceX Occupying Mars
     </p>
-    <p>
+    <p
+      className="population"
+    >
       Population: 
     </p>
     <p>
@@ -45,6 +43,12 @@ exports[`CHARACTER CARD should match the CharacterCard Component Snapshot 1`] = 
         Gravity
       </li>
     </ul>
+    <img
+      alt="favorite icon"
+      className="favorite-image"
+      onClick={[Function]}
+      src="isFavoriteFalse.svg"
+    />
     <button
       className="character-card-button"
       onClick={[Function]}
