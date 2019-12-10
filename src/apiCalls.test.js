@@ -683,6 +683,8 @@ describe('API CALLS', () => {
       expect(getIndividualFilms(characters[0].films)).toEqual(
         Promise.resolve()
       );
+
+      expect(getIndividualFilms(characters[0].films)).resolves.toEqual({});
     });
   });
 
@@ -714,6 +716,13 @@ describe('API CALLS', () => {
       cleanUpForSetUp(characters);
 
       expect(cleanUpForSetUp(characters)).toEqual(Promise.resolve());
+
+      expect(cleanUpForSetUp(characters)).resolves.toEqual({
+        homeworld: 'Earth',
+        species: 'Human',
+        films: ['Rise of Skywalker', 'Rise of Finn'],
+        name: 'Peerat'
+      });
     });
   });
 });
