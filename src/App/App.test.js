@@ -4,7 +4,7 @@ import { getAllMoviesData, setupCharactersData } from '../apiCalls';
 jest.mock('../apiCalls.js');
 import App from './App';
 
-describe('APP', () => {
+describe.only('APP', () => {
   let wrapper;
 
   beforeEach(() => {
@@ -57,4 +57,16 @@ describe('APP', () => {
     await wrapper.instance().setupCharacters(6);
     expect(setupCharactersData).toHaveBeenCalled();
   });
-});
+  
+    it('should reset the character data state', () => {
+    const startState = { isCharactersDataLoaded: true, selectedCharacters: [{ name: 'Leia' }, { name: 'Jabba the Hutt' }] }
+    const endState = { isCharactersDataLoaded: false, selectedCharacters: [] }
+
+    wrapper.setState(startState)
+
+    wrapper.instance().stateUpdateIsCharactersDataLoaded()
+
+    expect(wrapper.state().isCharactersDataLoaded).toEqual(false)
+
+    expect(wrapper.state().selectedCharacters).toEqual([])
+  });
