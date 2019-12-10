@@ -1,6 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.loading-page {
+  background-color: #282046;
+  color: #EF5F48;
+  padding: 30px;
+}
+
+.loading-page > h2 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+img {
+  height: 100vh;
+  width: 100%;
+}
+
 .character-container {
   margin: 0;
   padding: 0;
+  background-color: #000;
 }
 
 .grid-3 {
@@ -8,6 +30,7 @@
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 1rem;
 }
+
 
 .fade {
   position: relative;
@@ -35,7 +58,7 @@
   top: -700px;
   transform-origin: 50% 100%;
   font-size: 90px;
-  color: yellow;
+  color: #FFDE06;
   animation: crawl 90s linear;
 }
 

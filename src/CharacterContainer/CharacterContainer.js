@@ -11,11 +11,13 @@ const CharacterContainer = ({
 }) => {
   if (characters.length === 0) {
     return (
-      <React.Fragment>
-        <h2>RISE OF SKYWALKER is working hard for you!</h2>
-        <h2>Enjoy BB8 acting cute while the page is loading...</h2>
-        <img src={loadingImage} alt='Loading Image of BB8' />
-      </React.Fragment>
+      <div className='loading-page'>
+        <React.Fragment>
+          <h2>RISE OF SKYWALKER is working hard for you!</h2>
+          <h2>Enjoy BB8 acting cute while the page is loading...</h2>
+          <img src={loadingImage} alt='Loading Image of BB8' />
+        </React.Fragment>
+      </div>
     );
   }
 
