@@ -91,4 +91,55 @@ describe.only('APP', () => {
     wrapper.instance().clearFavoritesUponSignout();
     expect(wrapper.state('favoriteCharacters')).toEqual([]);
   });
+
+  it.skip('should be able to setupFavoriteCharacters by using the character names to search through', () => {
+    wrapper = shallow(<App />);
+    wrapper.setState({
+      favoriteCharacters: [
+        {
+          name: 'Peerat',
+          species: 'Human',
+          films: ['The Lion King', 'Rise of Skywalker'],
+          homeworld: 'Earth'
+        },
+        {
+          name: 'Consuelo',
+          species: 'Vegan Cake',
+          films: ['What the Health', 'Rise of Skywalker'],
+          homeworld: 'Earth'
+        }
+      ]
+    });
+
+    wrapper.instance().setupFavoriteCharacters(
+      {
+        name: 'Peerat2',
+        species: 'Human2',
+        films: ['The Lion King 2', 'Rise of Skywalker 2'],
+        homeworld: 'Earth 2'
+      },
+      'Peerat'
+    );
+
+    expect(wrapper.state('favoriteCharacters')).toEqual([
+      {
+        name: 'Peerat',
+        species: 'Human',
+        films: ['The Lion King', 'Rise of Skywalker'],
+        homeworld: 'Earth'
+      },
+      {
+        name: 'Consuelo',
+        species: 'Vegan Cake',
+        films: ['What the Health', 'Rise of Skywalker'],
+        homeworld: 'Earth'
+      },
+      {
+        name: 'Peerat2',
+        species: 'Human2',
+        films: ['The Lion King 2', 'Rise of Skywalker 2'],
+        homeworld: 'Earth 2'
+      }
+    ]);
+  });
 });
