@@ -11,6 +11,10 @@ describe('APP', () => {
     getAllMoviesData.mockImplementation(() => {
       return Promise.resolve([{}, {}, {}, {}, {}, {}, {}]);
     });
+
+    setupCharactersData.mockImplementation(() => {
+      return Promise.resolve([{}, {}, {}]);
+    });
   });
 
   it('should match the App Component Snapshot', () => {
@@ -31,5 +35,26 @@ describe('APP', () => {
     expect(wrapper.state('allMoviesData')).toEqual([]);
     expect(wrapper.state('selectedCharacters')).toEqual([]);
     expect(wrapper.state('favoriteCharacters')).toEqual([]);
+  });
+
+  it('should have default values for crawlingIndex and other conditional renderings that include isCharactersDataLoaded and error', () => {
+    wrapper = shallow(<App />);
+    expect(wrapper.state('crawlingIndex')).toEqual(null);
+    expect(wrapper.state('isCharactersDataLoaded')).toEqual(false);
+    expect(wrapper.state('error')).toEqual('');
+  });
+
+  it('should be able to setupUserProfile with userName, userQuote, and userRank', () => {
+    wrapper.setState({
+      userName: 'Peerat',
+      userQuote: 'I love programming in JavaScript with React!',
+      userRank: 'Jedi Knight'
+    });
+  });
+
+  it('should be able to setupCharacters with all the data', async () => {
+    wrapper = shallow(<App />);
+    await wrapper.instance().setupCharacters(6);
+    expect(setupCharactersData).toHaveBeenCalled();
   });
 });
