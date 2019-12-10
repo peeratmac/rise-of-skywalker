@@ -57,16 +57,20 @@ describe.only('APP', () => {
     await wrapper.instance().setupCharacters(6);
     expect(setupCharactersData).toHaveBeenCalled();
   });
-  
-    it('should reset the character data state', () => {
-    const startState = { isCharactersDataLoaded: true, selectedCharacters: [{ name: 'Leia' }, { name: 'Jabba the Hutt' }] }
-    const endState = { isCharactersDataLoaded: false, selectedCharacters: [] }
 
-    wrapper.setState(startState)
+  it('should reset the character data state', () => {
+    const startState = {
+      isCharactersDataLoaded: true,
+      selectedCharacters: [{ name: 'Leia' }, { name: 'Jabba the Hutt' }]
+    };
+    const endState = { isCharactersDataLoaded: false, selectedCharacters: [] };
 
-    wrapper.instance().stateUpdateIsCharactersDataLoaded()
+    wrapper.setState(startState);
 
-    expect(wrapper.state().isCharactersDataLoaded).toEqual(false)
+    wrapper.instance().stateUpdateIsCharactersDataLoaded();
 
-    expect(wrapper.state().selectedCharacters).toEqual([])
+    expect(wrapper.state().isCharactersDataLoaded).toEqual(false);
+
+    expect(wrapper.state().selectedCharacters).toEqual([]);
   });
+});
