@@ -1,7 +1,12 @@
+.character-container {
+  margin: 0;
+  padding: 0;
+}
+
 .grid-3 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1rem;
 }
 
 .fade {
@@ -14,8 +19,9 @@
 }
  
 .crawl-container {
-  background-image: url('../images/scrawl-sky.jpg');
+  background-image: url('../images/crawl-sky.jpg');
   height: 200px;
+  width: 100%;
   display: flex;
   justify-content: center;
   perspective: 200px;

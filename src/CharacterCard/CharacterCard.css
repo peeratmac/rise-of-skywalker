@@ -4,40 +4,58 @@
 }
 
 .character-card {
-  background-color: #04243D;
-  border: 8px ridge #FFF;
+  background-color: rgb(160, 165, 168);
+  border: 1px solid #fff;
   text-align: center;
   display: flex;
   flex-direction: column;
   font-size: 21px;
-  justify-content: space-between;
   width: 100%;
   margin: 15px;
   padding: 1.5rem;
-  color: #FFF;
+  color: #fff;
+  border-radius: 25px;
 }
 
 .favorite-image {
   cursor: pointer;
   transition: opacity 0.2s ease-in;
   width: 50px;
-  color: #FFF;
+  color: #fff;
+}
+
+p {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .episode-list {
-  min-height: 200px;
+  min-height: 300px;
   list-style: none;
+  padding-top: 20px;
+}
+
+.character-name {
+  height: 100px;
+}
+
+.population {
+  height: 100px;
 }
 
 .character-card-button {
-  background: #FFF;
+  background: #fff;
   border: 2px solid #fff;
   border-radius: 3px;
-  color: #04243D;
+  color: #04243d;
   cursor: pointer;
   display: inline-block;
   font-size: 1.2rem;
   padding: 0.4rem 1.3rem;
   transition: opacity 0.2s ease-in;
   font-weight: bold;
+}
+
+.character-card-button:focus {
+  outline: none;
 }
