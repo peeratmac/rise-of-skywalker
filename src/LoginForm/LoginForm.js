@@ -50,9 +50,6 @@ class LoginForm extends Component {
         <h1>Rise of Skywalker</h1>
 
         <form>
-          <h2 className={isFormComplete}>
-            Please make sure to have all the information to get started!
-          </h2>
           <input
             type='text'
             name='name'
@@ -82,6 +79,9 @@ class LoginForm extends Component {
             onClick={this.handleSubmit}>
             Submit to Proceed
           </button>
+          <h2 className={isFormComplete}>
+            Please complete all fields to continue!
+          </h2>
         </form>
       </div>
     );

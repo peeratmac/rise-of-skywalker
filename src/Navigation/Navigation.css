@@ -1,37 +1,50 @@
-.navigation-button {
-  display: inline-block;
-  background: lightgreen;
-  color: #333;
-  padding: 0.4rem 1.3rem;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  margin-right: 0.5rem;
-  transition: opacity 0.2s ease-in;
-  outline: none;
-  border-radius: 10px;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.card {
+.navigation-pane {
   display: flex;
-  background: #333;
+  flex-direction: column;
   justify-content: space-between;
+}
+
+.navigation-button {
+  background: #ABABAB;
+  border-radius: 10px;
+  border: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  margin: 10px;
+  outline: none;
+  padding: 0.4rem 1.3rem;
+  transition: opacity 0.2s ease-in;
+  width: 200px;
+}
+
+.navigation-button:hover {
+  cursor: pointer;
+}
+
+.nav-card {
   align-items: center;
-  padding: 0.7rem 2rem;
-  z-index: 1;
-  width: 100%;
-  opacity: 0.9;
+  background-color: #000;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 1rem;
+  min-height: 200px;
+  opacity: 0.9;
+  padding: 0.7rem 2rem;
+  width: 100%;
+  z-index: 1;
 }
 
 .user-name,
 .user-quote,
 .user-rank {
+  color: #FFF;
   font-size: 25px;
   font-weight: bold;
-  color: #ffffff;
-}
-
-.user-rank {
-  font-size: 34px;
 }

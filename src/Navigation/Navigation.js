@@ -11,11 +11,11 @@ const Navigation = ({
   clearFavoritesUponSignout
 }) => {
   return (
-    <div className='card'>
+    <div className='nav-card'>
       <div className='user-profile'>
-        <p className='user-name'>{userName}</p>
-        <p className='user-quote'>"{userQuote}"</p>
-        <p className='user-rank'>{userRank}</p>
+        <p className='user-name'>User Name : {userName}</p>
+        <p className='user-quote'>Favorite Quote : "{userQuote}"</p>
+        <p className='user-rank'>Rank : {userRank}</p>
       </div>
       <div className='navigation-pane'>
         <Link to='/favorites'>
@@ -32,8 +32,7 @@ const Navigation = ({
         </Link>
         <Link to='/'>
           <button
-            onClick={
-              (stateUpdateIsCharactersDataLoaded, clearFavoritesUponSignout)
+            onClick={(stateUpdateIsCharactersDataLoaded, clearFavoritesUponSignout)
             }
             className='navigation-button'>
             Sign Out

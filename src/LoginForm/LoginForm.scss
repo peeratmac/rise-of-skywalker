@@ -7,35 +7,36 @@
 .login-page {
   background-attachment: fixed;
   background-image: url('../images/login-duel.webp');
-  background-size: cover;
   background-repeat: no-repeat;
+  background-size: cover;
   height: 120vh;
 }
 
 h1 {
   color: #fff;
+  font-family: 'Squada One', cursive;
+  font-size: 80px;
+  padding: 35px;
   text-align: center;
   text-shadow: -1px 0 black, 0 2px black, 0px 0 black, 0 -1px black;
-  font-size: 50px;
-  padding: 35px;
 }
 
 form {
+  align-self: center;
   display: flex;
   flex-direction: column;
-  width: 40%;
-  align-self: center;
-  margin: 3% 0 0 30%;
   justify-content: space-between;
-  height: 200px;
+  margin: 0 0 0 30%;
+  width: 40%;
 }
 
 input {
-  height: 40px;
+  border-radius: 5px;
+  border: 3px solid #000;
   font-size: 20px;
-  border: 2px solid #000;
+  height: 50px;
+  margin: 10px;
   padding: 10px;
-  border-radius: 4px;
 }
 
 ::placeholder {
@@ -44,12 +45,13 @@ input {
 
 .login-btn,
 select {
-  cursor: pointer;
-  border: 2px solid #000;
-  height: 40px;
-  font-size: 20px;
+  border-radius: 5px;
+  border: 3px solid #000;
   color: #141d4f;
-  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  height: 50px;
+  margin: 10px;
 }
 
 .link {
@@ -58,7 +60,15 @@ select {
 }
 
 .show-error {
+  align-self: center;
+  background-color: #1B3C6C;
+  border-radius: 5px;
+  border: 1px solid #000;
   color: red;
+  font-size: 25px;
+  opacity: .9;
+  text-align: center;
+  width: 95%;
 }
 
 .do-not-show-error {
