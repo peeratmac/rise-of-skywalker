@@ -95,7 +95,6 @@ export const setupCharactersData = episodeID => {
       return response.json();
     })
     .then(data => {
-      console.log('/people URLs:', data.characters);
       return data.characters;
     })
     .then(URLs => cleanUpForSetUp(URLs))

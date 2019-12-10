@@ -8,7 +8,6 @@ const CharacterCard = ({
   setupFavoriteCharacters,
   favoriteCharactersMap
 }) => {
-  console.log('Character Card:', character);
   const favoriteImageSource =
     favoriteCharactersMap && favoriteCharactersMap.includes(character.name)
       ? isFavoriteTrue

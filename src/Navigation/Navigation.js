@@ -32,7 +32,8 @@ const Navigation = ({
         </Link>
         <Link to='/'>
           <button
-            onClick={(stateUpdateIsCharactersDataLoaded, clearFavoritesUponSignout)
+            onClick={
+              (stateUpdateIsCharactersDataLoaded, clearFavoritesUponSignout)
             }
             className='navigation-button'>
             Sign Out
