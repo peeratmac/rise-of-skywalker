@@ -692,4 +692,28 @@ describe('API CALLS', () => {
       expect(window.fetch).toHaveBeenCalledWith('https://swapi.co/api/films/4');
     });
   });
+
+  describe('CLEAN UP DATA FOR SETUP', () => {
+    let characters;
+
+    beforeEach(() => {
+      characters = [
+        'https://swapi.co/api/people/10/',
+        'https://swapi.co/api/people/12/',
+        'https://swapi.co/api/people/13/',
+        'https://swapi.co/api/people/14/',
+        'https://swapi.co/api/people/15/',
+        'https://swapi.co/api/people/16/',
+        'https://swapi.co/api/people/18/',
+        'https://swapi.co/api/people/19/',
+        'https://swapi.co/api/people/81/'
+      ];
+    });
+
+    it('should cleanup all the data from URLs and setup with homeworld, species, films, and name key', () => {
+      cleanUpForSetUp(characters);
+
+      expect(cleanUpForSetUp(characters)).toEqual(Promise.resolve());
+    });
+  });
 });
