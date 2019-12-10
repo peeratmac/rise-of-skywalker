@@ -8,11 +8,6 @@ exports[`LOGIN FORM should match the LoginForm Component Snapshot 1`] = `
     Rise of Skywalker
   </h1>
   <form>
-    <h2
-      className="do-not-show-error"
-    >
-      Please make sure to have all the information to get started!
-    </h2>
     <input
       name="name"
       onChange={[Function]}
@@ -60,6 +55,11 @@ exports[`LOGIN FORM should match the LoginForm Component Snapshot 1`] = `
     >
       Submit to Proceed
     </button>
+    <h2
+      className="do-not-show-error"
+    >
+      Please complete all fields to continue!
+    </h2>
   </form>
 </div>
 `;

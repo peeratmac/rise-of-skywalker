@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CHARACTER CONTAINER should match the CharacterContainer Component Snapshot 1`] = `
-<Fragment>
+<div
+  className="loading-page"
+>
   <h2>
     RISE OF SKYWALKER is working hard for you!
   </h2>
@@ -12,5 +14,5 @@ exports[`CHARACTER CONTAINER should match the CharacterContainer Component Snaps
     alt="Loading Image of BB8"
     src="loadingBB8.gif"
   />
-</Fragment>
+</div>
 `;

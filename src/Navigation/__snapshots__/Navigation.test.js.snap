@@ -2,7 +2,7 @@
 
 exports[`Navigation should match the Navigation Component Snapshot 1`] = `
 <div
-  className="card"
+  className="nav-card"
 >
   <div
     className="user-profile"
@@ -10,18 +10,20 @@ exports[`Navigation should match the Navigation Component Snapshot 1`] = `
     <p
       className="user-name"
     >
+      User Name : 
       Peerat
     </p>
     <p
       className="user-quote"
     >
-      "
+      Favorite Quote : "
       Naomi is amazing!
       "
     </p>
     <p
       className="user-rank"
     >
+      Rank : 
       Jedi Master
     </p>
   </div>
