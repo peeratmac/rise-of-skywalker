@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
+import PropTypes from 'prop-types';
 
 const Navigation = ({
   userName,
@@ -45,3 +46,12 @@ const Navigation = ({
 };
 
 export default Navigation;
+
+Navigation.propTypes = {
+  userName: PropTypes.string,
+  userQuote: PropTypes.string,
+  userRank: PropTypes.string,
+  stateUpdateIsCharactersDataLoaded: PropTypes.func.isRequired,
+  numberOfFavoriteCharacters: PropTypes.array,
+  clearFavoritesUponSignout: PropTypes.func.isRequired
+};

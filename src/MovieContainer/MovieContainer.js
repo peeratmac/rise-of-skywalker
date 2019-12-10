@@ -26,5 +26,7 @@ const MovieContainer = ({ movies, setupCharacters, updateCrawling }) => {
 export default MovieContainer;
 
 MovieContainer.propTypes = {
-  movies: PropTypes.array.isRequired
+  movies: PropTypes.array.isRequired,
+  setupCharacters: PropTypes.func.isRequired,
+  updateCrawling: PropTypes.func.isRequired
 };

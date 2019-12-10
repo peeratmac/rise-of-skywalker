@@ -49,5 +49,7 @@ const CharacterCard = ({
 export default CharacterCard;
 
 CharacterCard.propTypes = {
-  character: PropTypes.object.isRequired
+  character: PropTypes.object.isRequired,
+  setupFavoriteCharacters: PropTypes.func.isRequired,
+  favoriteCharactersMap: PropTypes.array
 };

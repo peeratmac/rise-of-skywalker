@@ -2,6 +2,7 @@ import React from 'react';
 import CharacterCard from '../CharacterCard/CharacterCard';
 import loadingImage from '../images/loadingBB8.gif';
 import './CharacterContainer.css';
+import PropTypes from 'prop-types';
 
 const CharacterContainer = ({
   characters,
@@ -45,3 +46,10 @@ const CharacterContainer = ({
 };
 
 export default CharacterContainer;
+
+CharacterContainer.propTypes = {
+  characters: PropTypes.array.isRequired,
+  crawl: PropTypes.string.isRequired,
+  setupFavoriteCharacters: PropTypes.func.isRequired,
+  favoriteCharactersMap: PropTypes.array
+};

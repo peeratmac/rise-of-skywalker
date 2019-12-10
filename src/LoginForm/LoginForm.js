@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './LoginForm.scss';
 import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class LoginForm extends Component {
   constructor() {
@@ -89,3 +90,7 @@ class LoginForm extends Component {
 }
 
 export default LoginForm;
+
+LoginForm.propTypes = {
+  setupUserProfile: PropTypes.func.isRequired
+};
