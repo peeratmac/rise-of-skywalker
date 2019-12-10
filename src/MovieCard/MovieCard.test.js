@@ -30,4 +30,20 @@ describe('MOVIE CARD', () => {
   it('should match the MovieCard Component Snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should call on setupCharacters when clicking to view characters for an episode', () => {
+    wrapper
+      .find('button')
+      .at(0)
+      .simulate('click');
+    expect(mockSetupCharacters).toHaveBeenCalled();
+  });
+
+  it('should call on updateCrawling when clicking to view characters for an episode', () => {
+    wrapper
+      .find('button')
+      .at(0)
+      .simulate('click');
+    expect(mockUpdateCrawling).toHaveBeenCalled();
+  });
 });

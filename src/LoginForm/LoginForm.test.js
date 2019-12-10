@@ -59,11 +59,24 @@ describe('LOGIN FORM', () => {
       quote: 'Winnie the Pooh!',
       rank: 'Jedi Knight'
     });
+
     wrapper
       .find('button')
       .at(0)
       .simulate('click');
 
     expect(mockSetupUserProfile).toHaveBeenCalled();
+  });
+
+  it('should set isReadyToLogin and isComplete to false when handleSubmit is called if either name or quote is not filled', () => {
+    wrapper = shallow(<LoginForm setupUserProfile={mockSetupUserProfile} />);
+
+    wrapper
+      .find('button')
+      .at(0)
+      .simulate('click');
+
+    expect(wrapper.state('isComplete')).toEqual(false);
+    expect(wrapper.state('isReadyToLogin')).toEqual(false);
   });
 });

@@ -27,4 +27,20 @@ describe('CHARACTER CARD', () => {
   it('should match the CharacterCard Component Snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should favorite/unfavorite characters upon clicking on the Favorite button', () => {
+    wrapper
+      .find('button')
+      .at(0)
+      .simulate('click');
+    expect(mockSetupFavoriteCharacters).toHaveBeenCalled();
+  });
+
+  it('should favorite/unfavorite characters upon clicking on the BB8 icon/image', () => {
+    wrapper
+      .find('img')
+      .at(0)
+      .simulate('click');
+    expect(mockSetupFavoriteCharacters).toHaveBeenCalled();
+  });
 });
