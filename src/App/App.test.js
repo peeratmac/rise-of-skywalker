@@ -22,4 +22,14 @@ describe('APP', () => {
     shallow(<App />);
     expect(getAllMoviesData).toHaveBeenCalled();
   });
+
+  it('should have default values for all states for the forms and for allMoviesData that include selectedCharacters and favoriteCharacters', () => {
+    wrapper = shallow(<App />);
+    expect(wrapper.state('userName')).toEqual('');
+    expect(wrapper.state('userQuote')).toEqual('');
+    expect(wrapper.state('userRank')).toEqual('');
+    expect(wrapper.state('allMoviesData')).toEqual([]);
+    expect(wrapper.state('selectedCharacters')).toEqual([]);
+    expect(wrapper.state('favoriteCharacters')).toEqual([]);
+  });
 });
