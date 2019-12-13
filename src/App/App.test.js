@@ -92,7 +92,7 @@ describe.only('APP', () => {
     expect(wrapper.state('favoriteCharacters')).toEqual([]);
   });
 
-  it.skip('should be able to setupFavoriteCharacters by using the character names to search through', () => {
+  it('should be able to setupFavoriteCharacters by using the character names to search through', () => {
     wrapper = shallow(<App />);
     wrapper.setState({
       favoriteCharacters: [
@@ -107,6 +107,12 @@ describe.only('APP', () => {
           species: 'Vegan Cake',
           films: ['What the Health', 'Rise of Skywalker'],
           homeworld: 'Earth'
+        },
+        {
+          name: 'HAHA',
+          species: 'Vegan Cake',
+          films: ['What the Health', 'Rise of Skywalker'],
+          homeworld: 'Earth'
         }
       ]
     });
@@ -118,9 +124,10 @@ describe.only('APP', () => {
         films: ['The Lion King 2', 'Rise of Skywalker 2'],
         homeworld: 'Earth 2'
       },
-      'Peerat'
+      'Peerat2'
     );
 
+    console.log(wrapper.state('favoriteCharacters'));
     expect(wrapper.state('favoriteCharacters')).toEqual([
       {
         name: 'Peerat',
@@ -130,6 +137,12 @@ describe.only('APP', () => {
       },
       {
         name: 'Consuelo',
+        species: 'Vegan Cake',
+        films: ['What the Health', 'Rise of Skywalker'],
+        homeworld: 'Earth'
+      },
+      {
+        name: 'HAHA',
         species: 'Vegan Cake',
         films: ['What the Health', 'Rise of Skywalker'],
         homeworld: 'Earth'

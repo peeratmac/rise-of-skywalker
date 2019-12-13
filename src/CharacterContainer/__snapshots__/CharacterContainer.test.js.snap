@@ -11,7 +11,7 @@ exports[`CHARACTER CONTAINER should match the CharacterContainer Component Snaps
     Enjoy BB8 acting cute while the page is loading...
   </h2>
   <img
-    alt="Loading Image of BB8"
+    alt="Loading Graphics of BB8"
     src="loadingBB8.gif"
   />
 </div>

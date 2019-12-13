@@ -5,7 +5,11 @@ exports[`LOGIN FORM should match the LoginForm Component Snapshot 1`] = `
   className="login-page"
 >
   <h1>
-    Rise of Skywalker
+    <img
+      alt="Star Wars Title"
+      className="logo"
+      src="title-logo.webp"
+    />
   </h1>
   <form>
     <input
